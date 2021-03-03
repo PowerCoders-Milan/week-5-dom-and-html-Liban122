@@ -2,22 +2,33 @@ function loadBooks(array) {
 
       for (var i = 0; i < array.length; i++) {
         var bookP = document.createElement('p');
-        var bookDescription = document.createTextNode(array[i].title + ' by ' + array[i].author);
+        var bookDescription = document.createTextNode(array[i].title);
+        var author = document.createTextNode (' by '  + array[i].author);
+        var image = document.createElement('img');
+        image.setAttribute("src", books.img)
+
         bookP.appendChild(bookDescription);
         document.body.appendChild(bookP);
+        document.body.appendChild(author);
+
+        var ulist = document.createElement('ul');
+        var theList1 = document.createElement('li');
+        var theList2 = document.createElement('li');
+        var theList3 = document.createElement('li');
+
+       ulist.appendChild(theList1);
+       ulist.appendChild(theList2);
+       ulist.appendChild(theList3);
+
+       theList1.appendChild(bookDescription);
+       theList2.appendChild(author);
+       theList3.appendChild(image)
+
+       document.getElementsByTagName('body')[0].appendChild(ulist)
+       bookP.alreadyRead == true ? bookP.style.backgroundColor = 'red' : bookP.style.backgroundColor = 'blue'
       }
      
-     for (var i = 0; i < books.length; i++) {
-        var items = document.getElementsByTagName('li');
-        var bookDescription = document.createTextNode(array[i].title + ' by ' + array[i].author);
-        items[i].className = 'list-item';
-     }
-     for(var i = 0; i < array.length; i++){
-        var myPic = document.createElement('img');
-        var bookDescription = document.createTextNode(array[i].title + ' by ' + array[i].author);
-        myPic.src = books.img;
-        document.body.appendChild(myPic);
-     } 
+    
 }
 
 // Paste here your array
