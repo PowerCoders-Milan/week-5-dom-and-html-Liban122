@@ -25,7 +25,7 @@ function loadBooks(array) {
        theList3.appendChild(image)
 
        document.getElementsByTagName('body')[0].appendChild(ulist)
-       bookP.alreadyRead == true ? bookP.style.backgroundColor = 'red' : bookP.style.backgroundColor = 'blue'
+       books.alreadyRead == true ? bookP.style.backgroundColor = 'red' : bookP.style.backgroundColor = 'blue'
       }
      
     
